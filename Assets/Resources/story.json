@@ -1,0 +1,397 @@
+{
+  "nodes": [
+    {
+      "id": "Start",
+      "text": "You are in a public park when a man suddenly collapses on the ground.\n\n[[Approach the patient]]",
+      "choices": [
+        {
+          "text": "Approach the patient",
+          "next": "Approach the patient"
+        }
+      ],
+      "pid": "1",
+      "position": {
+        "x": "0",
+        "y": "100"
+      }
+    },
+    {
+      "id": "Approach the patient",
+      "text": "You move closer to the patient lying on the ground.\n\nWhat will you do first?\n\n[[Check if the patient responds]]\n[[Leave the patient and look for help]]",
+      "choices": [
+        {
+          "text": "Check if the patient responds",
+          "next": "Check if the patient responds"
+        },
+        {
+          "text": "Leave the patient and look for help",
+          "next": "Leave the patient and look for help"
+        }
+      ],
+      "pid": "2",
+      "position": {
+        "x": "175",
+        "y": "175"
+      }
+    },
+    {
+      "id": "Leave the patient and look for help",
+      "text": "❌ Incorrect.\n\nLeaving immediately wastes valuable time. The first step is to **check if the patient is responsive**.\n\n[[Return to patient->Approach the patient]]",
+      "choices": [
+        {
+          "text": "Return to patient",
+          "next": "Approach the patient"
+        }
+      ],
+      "pid": "3",
+      "position": {
+        "x": "200",
+        "y": "25"
+      }
+    },
+    {
+      "id": "Check if the patient responds",
+      "text": "You tap the patient's shoulder and shout, \"Are you okay?\"\n\n[[Patient responds weakly]]\n[[Patient does not respond]]",
+      "choices": [
+        {
+          "text": "Patient responds weakly",
+          "next": "Patient responds weakly"
+        },
+        {
+          "text": "Patient does not respond",
+          "next": "Patient does not respond"
+        }
+      ],
+      "pid": "4",
+      "position": {
+        "x": "325",
+        "y": "150"
+      }
+    },
+    {
+      "id": "Patient responds weakly",
+      "text": "The patient groans and opens their eyes slightly.\n\n[[Help the patient sit up]]\n[[Call emergency services]]",
+      "choices": [
+        {
+          "text": "Help the patient sit up",
+          "next": "Help the patient sit up"
+        },
+        {
+          "text": "Call emergency services",
+          "next": "Call emergency services"
+        }
+      ],
+      "pid": "5",
+      "position": {
+        "x": "375",
+        "y": "0"
+      }
+    },
+    {
+      "id": "Help the patient sit up",
+      "text": "❌ Incorrect.\n\nMoving a weak patient may worsen their condition. You should **call emergency services first**.\n\n[[Return->Patient responds weakly]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Patient responds weakly"
+        }
+      ],
+      "pid": "6",
+      "position": {
+        "x": "700",
+        "y": "225"
+      }
+    },
+    {
+      "id": "Call emergency services",
+      "text": "You call emergency medical services.\n\nThe dispatcher asks you to **check if the patient is breathing**.\n\n[[Check breathing]]",
+      "choices": [
+        {
+          "text": "Check breathing",
+          "next": "Check breathing"
+        }
+      ],
+      "pid": "7",
+      "position": {
+        "x": "725",
+        "y": "25"
+      }
+    },
+    {
+      "id": "Patient does not respond",
+      "text": "The patient is unconscious.\n\n[[Call emergency services immediately]]\n[[Shake the patient violently]]",
+      "choices": [
+        {
+          "text": "Call emergency services immediately",
+          "next": "Call emergency services immediately"
+        },
+        {
+          "text": "Shake the patient violently",
+          "next": "Shake the patient violently"
+        }
+      ],
+      "pid": "8",
+      "position": {
+        "x": "950",
+        "y": "0"
+      }
+    },
+    {
+      "id": "Shake the patient violently",
+      "text": "❌ Incorrect.\n\nShaking the patient can cause injury. If a patient is unresponsive, **call emergency services immediately**.\n\n[[Return->Patient does not respond]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Patient does not respond"
+        }
+      ],
+      "pid": "9",
+      "position": {
+        "x": "825",
+        "y": "175"
+      }
+    },
+    {
+      "id": "Call emergency services immediately",
+      "text": "You call emergency medical services.\n\nThe dispatcher asks you to **check breathing**.\n\n[[Check breathing]]",
+      "choices": [
+        {
+          "text": "Check breathing",
+          "next": "Check breathing"
+        }
+      ],
+      "pid": "10",
+      "position": {
+        "x": "1175",
+        "y": "50"
+      }
+    },
+    {
+      "id": "Check breathing",
+      "text": "You observe the patient's chest.\n\n[[Patient is breathing]]\n[[Patient is not breathing]]",
+      "choices": [
+        {
+          "text": "Patient is breathing",
+          "next": "Patient is breathing"
+        },
+        {
+          "text": "Patient is not breathing",
+          "next": "Patient is not breathing"
+        }
+      ],
+      "pid": "11",
+      "position": {
+        "x": "25",
+        "y": "550"
+      }
+    },
+    {
+      "id": "Patient is breathing",
+      "text": "The patient is breathing but unconscious.\n\n[[Place patient in recovery position]]\n[[Give the patient water]]",
+      "choices": [
+        {
+          "text": "Place patient in recovery position",
+          "next": "Place patient in recovery position"
+        },
+        {
+          "text": "Give the patient water",
+          "next": "Give the patient water"
+        }
+      ],
+      "pid": "12",
+      "position": {
+        "x": "0",
+        "y": "325"
+      }
+    },
+    {
+      "id": "Give the patient water",
+      "text": "❌ Incorrect.\n\nAn unconscious person may choke on liquids.\n\n[[Return->Patient is breathing]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Patient is breathing"
+        }
+      ],
+      "pid": "13",
+      "position": {
+        "x": "325",
+        "y": "550"
+      }
+    },
+    {
+      "id": "Place patient in recovery position",
+      "text": "You roll the patient onto their side to keep the airway clear.\n\nEmergency responders are on the way.\n\n✅ Scenario complete — patient stabilized.",
+      "pid": "14",
+      "position": {
+        "x": "500",
+        "y": "325"
+      }
+    },
+    {
+      "id": "Patient is not breathing",
+      "text": "The patient shows no signs of breathing.\n\n[[Begin CPR]]\n[[Wait for ambulance]]",
+      "choices": [
+        {
+          "text": "Begin CPR",
+          "next": "Begin CPR"
+        },
+        {
+          "text": "Wait for ambulance",
+          "next": "Wait for ambulance"
+        }
+      ],
+      "pid": "15",
+      "position": {
+        "x": "700",
+        "y": "375"
+      }
+    },
+    {
+      "id": "Wait for ambulance",
+      "text": "❌ Incorrect.\n\nWaiting without action greatly reduces survival chances.\n\n[[Return->Patient is not breathing]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Patient is not breathing"
+        }
+      ],
+      "pid": "16",
+      "position": {
+        "x": "850",
+        "y": "575"
+      }
+    },
+    {
+      "id": "Begin CPR",
+      "text": "You start chest compressions.\n\n[[Continue compressions]]\n[[Stop to check phone]]",
+      "choices": [
+        {
+          "text": "Continue compressions",
+          "next": "Continue compressions"
+        },
+        {
+          "text": "Stop to check phone",
+          "next": "Stop to check phone"
+        }
+      ],
+      "pid": "17",
+      "position": {
+        "x": "950",
+        "y": "300"
+      }
+    },
+    {
+      "id": "Stop to check phone",
+      "text": "❌ Incorrect.\n\nInterrupting CPR reduces blood circulation to the brain.\n\n[[Return->Begin CPR]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Begin CPR"
+        }
+      ],
+      "pid": "18",
+      "position": {
+        "x": "1175",
+        "y": "550"
+      }
+    },
+    {
+      "id": "Continue compressions",
+      "text": "You maintain a steady rhythm of chest compressions.\n\nSomeone nearby brings an AED.\n\n[[Use the AED]]\n[[Ignore the AED]]",
+      "choices": [
+        {
+          "text": "Use the AED",
+          "next": "Use the AED"
+        },
+        {
+          "text": "Ignore the AED",
+          "next": "Ignore the AED"
+        }
+      ],
+      "pid": "19",
+      "position": {
+        "x": "1175",
+        "y": "925"
+      }
+    },
+    {
+      "id": "Ignore the AED",
+      "text": "❌ Incorrect.\n\nAEDs significantly increase survival chances in cardiac arrest.\n\n[[Return->Continue compressions]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Continue compressions"
+        }
+      ],
+      "pid": "20",
+      "position": {
+        "x": "1250",
+        "y": "675"
+      }
+    },
+    {
+      "id": "Use the AED",
+      "text": "You turn on the AED and attach the pads.\n\n[[Deliver shock]]\n[[Skip shock]]",
+      "choices": [
+        {
+          "text": "Deliver shock",
+          "next": "Deliver shock"
+        },
+        {
+          "text": "Skip shock",
+          "next": "Skip shock"
+        }
+      ],
+      "pid": "21",
+      "position": {
+        "x": "50",
+        "y": "725"
+      }
+    },
+    {
+      "id": "Skip shock",
+      "text": "❌ Incorrect.\n\nIf the AED recommends a shock, it should be delivered immediately.\n\n[[Return->Use the AED]]",
+      "choices": [
+        {
+          "text": "Return",
+          "next": "Use the AED"
+        }
+      ],
+      "pid": "22",
+      "position": {
+        "x": "150",
+        "y": "875"
+      }
+    },
+    {
+      "id": "Deliver shock",
+      "text": "Shock delivered.\n\nYou resume CPR while waiting for emergency services.\n\n[[Continue CPR]]",
+      "choices": [
+        {
+          "text": "Continue CPR",
+          "next": "Continue CPR"
+        }
+      ],
+      "pid": "23",
+      "position": {
+        "x": "475",
+        "y": "925"
+      }
+    },
+    {
+      "id": "Continue CPR",
+      "text": "Emergency responders arrive and take over.\n\n✅ **Successful outcome — early CPR and AED use saved the patient.**",
+      "pid": "24",
+      "position": {
+        "x": "875",
+        "y": "925"
+      }
+    }
+  ],
+  "name": "Untitled Story",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "036078FF-AF72-4352-B61D-DED30E973956"
+}
