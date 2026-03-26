@@ -16,6 +16,7 @@ public class Node
     public string id;
     public string text;
     public Choice[] choices;
+    public string sceneTag; // Matches the sceneTag in your JSON
 }
 
 [System.Serializable]
@@ -28,6 +29,7 @@ public class StoryManager : MonoBehaviour
 {
     public TextMeshProUGUI storyText;
     public Button[] choiceButtons;
+    public SceneController sceneController; // 👈 Added SceneController reference
 
     private Dictionary<string, Node> storyDict;
     private string currentNode;
@@ -35,7 +37,7 @@ public class StoryManager : MonoBehaviour
     void Start()
     {
         LoadStory();
-        currentNode = "Start"; // IMPORTANT (matches your JSON)
+        currentNode = "Start"; 
         ShowNode();
     }
 
@@ -53,26 +55,34 @@ public class StoryManager : MonoBehaviour
     }   
 
     string CleanText(string text)
-{
-    // Remove [[...]] patterns (Twine links)
-    while (text.Contains("[["))
     {
-        int start = text.IndexOf("[[");
-        int end = text.IndexOf("]]") + 2;
-
-        if (start >= 0 && end > start)
+        // Remove [[...]] patterns (Twine links)
+        while (text.Contains("[["))
         {
-            text = text.Remove(start, end - start);
-        }
-        else break;
-    }
+            int start = text.IndexOf("[[");
+            int end = text.IndexOf("]]") + 2;
 
-    return text.Trim();
-}
+            if (start >= 0 && end > start)
+            {
+                text = text.Remove(start, end - start);
+            }
+            else break;
+        }
+
+        return text.Trim();
+    }
 
     void ShowNode()
     {
+        if (!storyDict.ContainsKey(currentNode)) return;
+
         Node node = storyDict[currentNode];
+
+        // 👈 Trigger the visual scene change based on the node's tag
+        if (sceneController != null)
+        {
+            sceneController.ShowScene(node.sceneTag);
+        }
 
         storyText.text = CleanText(node.text);
 
@@ -95,6 +105,7 @@ public class StoryManager : MonoBehaviour
 
             string nextNode = node.choices[i].next;
 
+            // Using a temporary variable to capture the correct nextNode for the listener
             btn.onClick.AddListener(() =>
             {
                 currentNode = nextNode;

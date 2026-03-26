@@ -2,6 +2,7 @@
   "nodes": [
     {
       "id": "Start",
+      "sceneTag": "park",
       "text": "You are in a public park when a man suddenly collapses on the ground.\n\n[[Approach the patient]]",
       "choices": [
         {
@@ -17,6 +18,7 @@
     },
     {
       "id": "Approach the patient",
+      "sceneTag": "interaction",
       "text": "You move closer to the patient lying on the ground.\n\nWhat will you do first?\n\n[[Check if the patient responds]]\n[[Leave the patient and look for help]]",
       "choices": [
         {
@@ -36,6 +38,7 @@
     },
     {
       "id": "Leave the patient and look for help",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nLeaving immediately wastes valuable time. The first step is to **check if the patient is responsive**.\n\n[[Return to patient->Approach the patient]]",
       "choices": [
         {
@@ -51,6 +54,7 @@
     },
     {
       "id": "Check if the patient responds",
+      "sceneTag": "interaction",
       "text": "You tap the patient's shoulder and shout, \"Are you okay?\"\n\n[[Patient responds weakly]]\n[[Patient does not respond]]",
       "choices": [
         {
@@ -70,6 +74,7 @@
     },
     {
       "id": "Patient responds weakly",
+      "sceneTag": "interaction",
       "text": "The patient groans and opens their eyes slightly.\n\n[[Help the patient sit up]]\n[[Call emergency services]]",
       "choices": [
         {
@@ -89,6 +94,7 @@
     },
     {
       "id": "Help the patient sit up",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nMoving a weak patient may worsen their condition. You should **call emergency services first**.\n\n[[Return->Patient responds weakly]]",
       "choices": [
         {
@@ -104,6 +110,7 @@
     },
     {
       "id": "Call emergency services",
+      "sceneTag": "interaction",
       "text": "You call emergency medical services.\n\nThe dispatcher asks you to **check if the patient is breathing**.\n\n[[Check breathing]]",
       "choices": [
         {
@@ -119,6 +126,7 @@
     },
     {
       "id": "Patient does not respond",
+      "sceneTag": "interaction",
       "text": "The patient is unconscious.\n\n[[Call emergency services immediately]]\n[[Shake the patient violently]]",
       "choices": [
         {
@@ -138,6 +146,7 @@
     },
     {
       "id": "Shake the patient violently",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nShaking the patient can cause injury. If a patient is unresponsive, **call emergency services immediately**.\n\n[[Return->Patient does not respond]]",
       "choices": [
         {
@@ -153,6 +162,7 @@
     },
     {
       "id": "Call emergency services immediately",
+      "sceneTag": "interaction",
       "text": "You call emergency medical services.\n\nThe dispatcher asks you to **check breathing**.\n\n[[Check breathing]]",
       "choices": [
         {
@@ -168,6 +178,7 @@
     },
     {
       "id": "Check breathing",
+      "sceneTag": "interaction",
       "text": "You observe the patient's chest.\n\n[[Patient is breathing]]\n[[Patient is not breathing]]",
       "choices": [
         {
@@ -187,6 +198,7 @@
     },
     {
       "id": "Patient is breathing",
+      "sceneTag": "interaction",
       "text": "The patient is breathing but unconscious.\n\n[[Place patient in recovery position]]\n[[Give the patient water]]",
       "choices": [
         {
@@ -206,6 +218,7 @@
     },
     {
       "id": "Give the patient water",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nAn unconscious person may choke on liquids.\n\n[[Return->Patient is breathing]]",
       "choices": [
         {
@@ -221,6 +234,7 @@
     },
     {
       "id": "Place patient in recovery position",
+      "sceneTag": "recovery",
       "text": "You roll the patient onto their side to keep the airway clear.\n\nEmergency responders are on the way.\n\n✅ Scenario complete — patient stabilized.",
       "pid": "14",
       "position": {
@@ -230,6 +244,7 @@
     },
     {
       "id": "Patient is not breathing",
+      "sceneTag": "interaction",
       "text": "The patient shows no signs of breathing.\n\n[[Begin CPR]]\n[[Wait for ambulance]]",
       "choices": [
         {
@@ -249,6 +264,7 @@
     },
     {
       "id": "Wait for ambulance",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nWaiting without action greatly reduces survival chances.\n\n[[Return->Patient is not breathing]]",
       "choices": [
         {
@@ -264,6 +280,7 @@
     },
     {
       "id": "Begin CPR",
+      "sceneTag": "cpr",
       "text": "You start chest compressions.\n\n[[Continue compressions]]\n[[Stop to check phone]]",
       "choices": [
         {
@@ -283,6 +300,7 @@
     },
     {
       "id": "Stop to check phone",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nInterrupting CPR reduces blood circulation to the brain.\n\n[[Return->Begin CPR]]",
       "choices": [
         {
@@ -298,6 +316,7 @@
     },
     {
       "id": "Continue compressions",
+      "sceneTag": "cpr",
       "text": "You maintain a steady rhythm of chest compressions.\n\nSomeone nearby brings an AED.\n\n[[Use the AED]]\n[[Ignore the AED]]",
       "choices": [
         {
@@ -317,6 +336,7 @@
     },
     {
       "id": "Ignore the AED",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nAEDs significantly increase survival chances in cardiac arrest.\n\n[[Return->Continue compressions]]",
       "choices": [
         {
@@ -332,6 +352,7 @@
     },
     {
       "id": "Use the AED",
+      "sceneTag": "cpr",
       "text": "You turn on the AED and attach the pads.\n\n[[Deliver shock]]\n[[Skip shock]]",
       "choices": [
         {
@@ -351,6 +372,7 @@
     },
     {
       "id": "Skip shock",
+      "sceneTag": "warning",
       "text": "❌ Incorrect.\n\nIf the AED recommends a shock, it should be delivered immediately.\n\n[[Return->Use the AED]]",
       "choices": [
         {
@@ -366,6 +388,7 @@
     },
     {
       "id": "Deliver shock",
+      "sceneTag": "cpr",
       "text": "Shock delivered.\n\nYou resume CPR while waiting for emergency services.\n\n[[Continue CPR]]",
       "choices": [
         {
@@ -381,6 +404,7 @@
     },
     {
       "id": "Continue CPR",
+      "sceneTag": "recovery",
       "text": "Emergency responders arrive and take over.\n\n✅ **Successful outcome — early CPR and AED use saved the patient.**",
       "pid": "24",
       "position": {
